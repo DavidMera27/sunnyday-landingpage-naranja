@@ -46,19 +46,55 @@ body {
 }
 
 .nav__links {
-  display: none;
+  position: fixed;
+  width: 90%;
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  background-color: var(--white);
+  top: 100px;
+  margin: 0 auto;
+
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s opacity;
+}
+
+.links__activo {
+  /* display: grid; */
+  opacity: unset;
+  pointer-events: all;
+}
+
+.nav__links::before {
+  content: "";
+  border-top: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-right: 50px solid var(--white);
+  border-bottom: 50px solid var(--white);
+  position: absolute;
+  top: -40px;
+  right: 0;
 }
 
 .nav__link {
-  color: var(--white);
+  font-family: var(--font2);
+  font-size: 1.2rem;
+  color: var(--dark-grayish-blue);
   text-decoration: none;
+  justify-self: center;
 }
 
 .nav__link--cta {
+  font-family: var(--font1);
+  font-size: 1.1rem;
+  font-weight: bold;
   color: var(--dark-blue);
-  background-color: var(--white);
-  padding: 0.7rem 1.5rem;
-  border-radius: 20px;
+  background-color: var(--yellow);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-transform: uppercase;
 }
 
 .header__main {
@@ -307,6 +343,28 @@ body {
     grid-auto-flow: column;
     align-items: center;
     gap: 1.5rem;
+    display: grid;
+    width: unset;
+    padding: unset;
+    background-color: unset;
+    position: unset;
+    opacity: unset;
+    pointer-events: all;
+  }
+
+  .nav__links::before {
+    display: none;
+  }
+
+  .nav__link {
+    color: var(--white);
+  }
+
+  .nav__link--cta {
+    color: var(--dark-blue);
+    background-color: var(--white);
+    padding: 0.7rem 1.5rem;
+    border-radius: 20px;
   }
 
   .topics {
@@ -404,5 +462,4 @@ body {
   .gallery__item:nth-of-type(4) {
     background-image: url("images/desktop/image-gallery-sugarcubes.jpg");
   }
-
 }
