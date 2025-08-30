@@ -45,6 +45,22 @@ body {
   align-items: center;
 }
 
+.nav__links {
+  display: none;
+}
+
+.nav__link {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav__link--cta {
+  color: var(--dark-blue);
+  background-color: var(--white);
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+}
+
 .header__main {
   height: 450px;
   text-align: center;
@@ -141,9 +157,10 @@ body {
   background-size: cover;
   background-position: center;
   display: flex;
+  justify-content: center;
   padding: 3rem 0;
   --bold-text-color: var(--dark-desaturated-cyan);
-  --light-text-color: var(--dark-desaturated-cyan);
+  --light-text-color: var(--dark-moderate-cyan);
 }
 
 .topic__job--second {
@@ -170,18 +187,18 @@ body {
   text-transform: uppercase;
 }
 
-.testimonials__container{
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    gap: 5rem;
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  gap: 5rem;
 }
 
-.testimonial__item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+.testimonial__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .testimonial__img {
@@ -209,68 +226,142 @@ body {
   color: var(--grayish-blue);
 }
 
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.gallery__item{
-    width: 100%;
-    aspect-ratio: 1/1;
-    background-image: url("images/mobile/image-gallery-milkbottles.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.gallery__item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-image: url("images/mobile/image-gallery-milkbottles.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.gallery__item:nth-of-type(2){
-    background-image: url("images/mobile/image-gallery-orange.jpg");
+.gallery__item:nth-of-type(2) {
+  background-image: url("images/mobile/image-gallery-orange.jpg");
 }
 
-.gallery__item:nth-of-type(3){
-    background-image: url("images/mobile/image-gallery-cone.jpg");
+.gallery__item:nth-of-type(3) {
+  background-image: url("images/mobile/image-gallery-cone.jpg");
 }
 
-.gallery__item:nth-of-type(4){
-    background-image: url("images/mobile/image-gallery-sugar-cubes.jpg");
+.gallery__item:nth-of-type(4) {
+  background-image: url("images/mobile/image-gallery-sugar-cubes.jpg");
 }
 
-.footer{
-    background-color: #90D4C5;
-    text-align: center;
+.footer {
+  background-color: #90d4c5;
+  text-align: center;
 }
 
-.footer__logo{
-    width: 200px;
+.footer__logo {
+  width: 200px;
 }
 
 /* Se da un ancho del 90% del padre pero con un limite, y un flex */
-.footer__links{
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 3rem 0 6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footer__links {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 3rem 0 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.link__item{
-    color: var(--dark-moderate-cyan);
-    text-decoration: none;
+.link__item {
+  color: var(--dark-moderate-cyan);
+  text-decoration: none;
 }
 
 /* max-content ayuda a que las columnas generadas automaticamente tomen el tamano necesario para su contenido */
-.footer__social{
-    display: grid;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-
+.footer__social {
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
-.social__icon{
-    display: block;
+.social__icon {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .header {
+    background-image: url("images/desktop/image-header.jpg");
+  }
+
+  .nav__hamburguer {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .topics {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 600px);
+    grid-template-areas:
+      "text1 img1"
+      "img2 text2"
+      "job1 job2";
+  }
+
+  .topic__image {
+    grid-area: img1;
+  }
+
+  .topic__image--second {
+    grid-area: img2;
+  }
+
+  .topic__tittle {
+    margin-right: auto;
+    font-size: 2.7rem;
+  }
+
+  .topic__tittle--job {
+    margin-right: unset;
+  }
+
+  .topic__texts {
+    grid-area: text1;
+    text-align: left;
+    padding: 90px;
+    width: 90%;
+  }
+
+  .topic__texts--second {
+    grid-area: text2;
+  }
+
+  .topic__job {
+    grid-area: job1;
+    background-image: url("images/desktop/image-graphic-design.jpg");
+  }
+
+  .topic__job--second {
+    grid-area: job2;
+    background-image: url("images/desktop/image-photography.jpg");
+  }
+
+  .topic__texts--job {
+    text-align: center;
+    width: 80%;
+    padding-bottom: unset;
+  }
+
+  .topic__cta {
+    margin-right: auto;
+  }
+
 }
