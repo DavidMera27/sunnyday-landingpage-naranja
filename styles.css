@@ -1,7 +1,7 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -16,121 +16,143 @@
   --grayish-blue: hsl(210, 4%, 67%);
   --white: hsl(0, 100%, 100%);
 
-  --font1: 'Fraunces', serif;
-  --font2: 'Barlow', sans-serif;
-
+  --font1: "Fraunces", serif;
+  --font2: "Barlow", sans-serif;
 }
 
-body{
-    font-family: var(--font2);
+body {
+  font-family: var(--font2);
 }
 
-.container{
-    padding: 80px 0;
-    width: 90%;
-    margin: 0 auto;
+.container {
+  padding: 80px 0;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.header{
-    background-image: url("images/mobile/image-header.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.header {
+  background-image: url("images/mobile/image-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.header__nav{
-    padding: 30px 0;
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
-    align-items: center;
+.header__nav {
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header__main{
-    height: 450px;
-    text-align: center;
-    color: white;
+.header__main {
+  height: 450px;
+  text-align: center;
+  color: white;
 }
 
-.main__tittle{
-    font-family: var(--font1);
-    font-size:  3rem;
-    font-weight: bold;
-    letter-spacing: 6px;
-    text-transform: uppercase;
+.main__tittle {
+  font-family: var(--font1);
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 6px;
+  text-transform: uppercase;
 }
 
-.main__arrow{
-    display: inline-block;
-    margin-top: 30px;
+.main__arrow {
+  display: inline-block;
+  margin-top: 30px;
 }
 
-.services{
-    width: 100%;
-    display: grid;
-    grid-template-rows: repeat(2, 300px 400px);
+/* En los primeros 4 topics, se definen unos colores, y en los ultimos 4 otros (ver topic__job) */
+.topics {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 300px 400px) repeat(2, 600px);
+  --bold-text-color: var(--very-dark-desaturated-blue);
+  --light-text-color: var(--dark-grayish-blue);
 }
 
-.service__image{
-    background-image: url("images/mobile/image-transform.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.topic__image {
+  background-image: url("images/mobile/image-transform.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.service__image--second{
-    background-image: url("images/mobile/image-stand-out.jpg");
+.topic__image--second {
+  background-image: url("images/mobile/image-stand-out.jpg");
 }
 
-.service__texts{
-    padding: 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    place-self: center;
-    align-items: center;
-    text-align: center;    
+.topic__texts {
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  place-self: center;
+  align-items: center;
+  text-align: center;
 }
 
-.service__tittle{
-    font-family: var(--font1);
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--very-dark-desaturated-blue);
+.topic__tittle {
+  font-family: var(--font1);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--bold-text-color);
 }
 
-.service__paragraph{
-    color: var(--dark-grayish-blue);
-    font-size: 1.1rem;
-    line-height: 1.5rem;
+.topic__paragraph {
+  color: var(--light-text-color);
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
-.service__cta{
-    width: fit-content;
-    font-family: var(--font1);
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: var(--very-dark-desaturated-blue);
-    position: relative;
+.topic__cta {
+  width: fit-content;
+  font-family: var(--font1);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: var(--bold-text-color);
+  position: relative;
 }
 
-.service__cta::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 10px;
-    background-color: hsla(51, 100%, 49%, 0.267);
-    border-radius: 5px;
+.topic__cta::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background-color: hsla(51, 100%, 49%, 0.267);
+  border-radius: 5px;
 }
 
-.service__cta--second::before{
-    background-color: hsla(7, 99%, 70%, 0.267);
+.topic__cta--second::before {
+  background-color: hsla(7, 99%, 70%, 0.267);
 }
 
+/* Modificamos para el contexto de job los colores definidos en topics */
+.topic__job {
+  background-image: url("images/mobile/image-graphic-design.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  padding: 3rem 0;
+  --bold-text-color: var(--dark-desaturated-cyan);
+  --light-text-color: var(--dark-desaturated-cyan);
+}
 
+.topic__job--second {
+  background-image: url("images/mobile/image-photography.jpg");
+  --bold-text-color: var(--dark-blue);
+  --light-text-color: var(--dark-blue);
+}
+
+.topic__texts--job {
+  align-self: end;
+}
 
