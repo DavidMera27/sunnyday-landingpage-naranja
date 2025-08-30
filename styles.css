@@ -156,3 +156,55 @@ body {
   align-self: end;
 }
 
+.testimonials {
+  display: block;
+  text-align: center;
+}
+
+.testimonials__tittle {
+  font-family: var(--font1);
+  color: var(--grayish-blue);
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.testimonials__container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 5rem;
+}
+
+.testimonial__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.testimonial__img {
+  display: inline-block;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.testimonial__paragraph {
+  color: var(--very-dark-grayish-blue);
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.testimonial__name {
+  font-family: var(--font1);
+  color: var(--very-dark-desaturated-blue);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonial__position {
+  font-family: var(--font2);
+  color: var(--grayish-blue);
+}
