@@ -260,6 +260,7 @@ body {
     text-decoration: none;
 }
 
+/* max-content ayuda a que las columnas generadas automaticamente tomen el tamano necesario para su contenido */
 .footer__social{
     display: grid;
     grid-auto-columns: max-content;
